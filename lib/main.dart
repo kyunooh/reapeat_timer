@@ -50,7 +50,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _time = 5;
+  int _time = 30;
   var _future;
   bool _isplay = false;
   var _stop = false;
