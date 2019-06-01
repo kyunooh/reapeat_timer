@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _time = 5;
   var _future;
   bool _isplay = false;
-
+  var _stop = false;
   AudioPlayer _player;
 
   void _decrementSecondUntilZero() {
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   void playMusic() async  {
-    if(!_isplay) {
+    if(!_stop && !_isplay) {
       setState(() {
         _isplay = true;
       });
@@ -154,8 +154,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   stopMusic();
                   setState(() {
+                    _stop = false;
                     _time = 30;
                   });
+                }),
+            FlatButton.icon(
+                icon: Icon(Icons.stop),
+                label: Text('Stop'),
+                onPressed: () {
+                  setState(() {
+                    _stop = true;
+                  });
+                  stopMusic();
                 })
           ],
         ),
