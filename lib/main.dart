@@ -164,6 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   setState(() {
                     _stop = true;
+                    _time = 0;
                   });
                   stopMusic();
                 })
